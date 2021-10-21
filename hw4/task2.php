@@ -3,16 +3,15 @@
 </head>
 <body>
 <?php
-$images = scandir('img/');
+
+$images = scandir('img');
 foreach ($images as $image) {
     if (is_file('img/' . $image)) {
-        ?>
-        <a href="/img/<?php echo $image; ?>" target="_blank">
+        ?> <a href="/img/<?php echo $image; ?>" target="_blank">
             <img src="/img/<?php echo $image; ?>" width = "400">
         </a>
-   <?php
-    }
-}
-?>
+ <?php   }
+} ?>
+
 </body>
 </html>
