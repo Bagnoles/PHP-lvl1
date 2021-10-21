@@ -3,6 +3,7 @@
 </head>
 <body>
 <?php
+
 $images = scandir('img');
 foreach ($images as $image) {
     if (is_file('img/' . $image)) {
@@ -11,5 +12,6 @@ foreach ($images as $image) {
         </a>
  <?php   }
 } ?>
+
 </body>
 </html>
