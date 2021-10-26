@@ -35,20 +35,19 @@ $alphabet = [
         'ь' => '`',
         'э' => 'e',
         'ю' => 'yu',
-        'я' => 'ya'
+        'я' => 'ya',
+        ' ' => ' '
 ];
 
 function translitiration ($string, $alphabet) {
-    $stringTranslit = "";
-    for ($i = 0; $i < strlen($string); $i++) {
+    $stringTranslit = '';
+    for ($i = 0; $i < mb_strlen($string); $i++) {
         foreach($alphabet as $key => $value) {
-            if ($key == $string[$i]) {
-                $stringTranslit = $stringTranslit . $value;
+            if ($key == mb_substr($string, $i, 1, 'UTF-8')) {
+                $stringTranslit .= $value;
             }
         }
     }
     return $stringTranslit;
 }
 
-$string = 'привет';
-echo translitiration($string, $alphabet);
